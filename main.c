@@ -20,30 +20,22 @@ int main()
 		if (n_numeros > valor_max) {
 			printf("\nCondição impossível, tente novamente.\n");
 			execucao = 0;
-		} 
+		}
 
 		else if (n_numeros > (valor_max / 2)) {
-			printf("\nOs valores digitados são imprudentes, você deseja continuar?\n1 - Sim, quero fazer isso.\n2 - Não, quero tentar de novo.\n");
-
-
-
-
-
 
 			do {
-				fflush(stdin);
-				scanf("%c", &opcao);
+				printf("\nOs valores digitados são imprudentes, você deseja continuar?\n1 - Sim, quero fazer isso.\n2 - Não, quero tentar de novo.\n");
+				fflush(stdin); // limpa o buffer do teclado
+				scanf("%c", &opcao); // recebe apenas um caractere
 			}
-			
-			while (isdigit(opcao) == 0 || (opcao != '1' && opcao != '2'));
 
+			while (isdigit(opcao) == 0 || (
+				// reexecuta o do {} caso o caractere digitado seja diferente dos abaixo
+				opcao != '1' && opcao != '2'
+			));
 
-
-
-
-
-
-			if (opcao == 2) execucao = 0; 
+			if (opcao == 2) execucao = 0;
 		}
 
 		else execucao = 1;
@@ -93,20 +85,6 @@ int main()
 	}
 
 	while (n_repeticao != 0); // repete o trecho de código do DO até não haver repetições, ou seja, quando n_repeticao for igual a 0.
-
-	/*for (i = 0; i > (n_numeros - 1); i++) {
-    	min = i;
-    	for (j = (i+1); j > n_numeros; j++) {
-      		if(numero[j] > numero[min]) {
-        		min = j;
-      		}
-    	}
-    	if (i != min) {
-      		swap = numero[i];
-      		numero[i] = numero[min];
-      		numero[min] = swap;
-    	}
-  	}*/
 
 	/* Exibe o resultado */
 
